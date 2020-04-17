@@ -42,7 +42,7 @@ const Form = () => {
                 <input 
                     type='text'
                     value={newSmurf.age}
-                    onChange={(e)=> setNewSmurf({...newSmurf, age: e.target.value})}
+                    onChange={(e)=> setNewSmurf({...newSmurf, age: parseInt(e.target.value)})}
                     placeholder='Enter age'
                 />
                 <input 
