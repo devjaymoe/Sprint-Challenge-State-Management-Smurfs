@@ -4,9 +4,8 @@ import axios from 'axios'
 
 const Smurfs = () => {
     const {smurfs, setSmurfs} = useContext(SmurfContext)
-
     // console.log(smurfs, setSmurfs)
-
+    // console.log(smurfState)
     useEffect(()=>{
         axios.get(`http://localhost:3333/smurfs`)
             .then(response => {
@@ -22,13 +21,13 @@ const Smurfs = () => {
     console.log(smurfs)
     return (
         <div>
-            {smurfs.map(smurf=>(
+            {smurfs.length >= 1 ? smurfs.map(smurf=>(
                 <div key={smurf.id}>
                     <h3>{smurf.name}</h3>
                     <p>{smurf.age}</p>
                     <p>{smurf.height}</p>
                 </div>
-            ))}
+            )) : null}
         </div>
     )
 }
