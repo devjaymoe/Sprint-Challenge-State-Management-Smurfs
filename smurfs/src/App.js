@@ -8,18 +8,11 @@ import Form from './components/Form';
 import "./App.css";
 
 const App = () => {
-  const [smurfs, setSmurfs] = useState([
-    {
-      name: "",
-      age: null,
-      height: "",
-      id: Date.now()
-    }
-  ])
+  const [smurfs, setSmurfs] = useState([])
 
   return (
     <div className="App">
-      <SmurfContext.Provider value={smurfs}>
+      <SmurfContext.Provider value={{smurfs, setSmurfs}}>
         <h1>SMURFS!</h1>
         <div>Welcome to your state management version of Smurfs!</div>
         <Form />
