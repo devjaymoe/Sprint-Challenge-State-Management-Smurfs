@@ -23,6 +23,11 @@ const Form = () => {
             .catch(error => {
                 console.log('Post Error: ', error)
             })
+        setNewSmurf({
+            name: '', 
+            age: '',
+            height: ''
+        })
     }
 
     return (
